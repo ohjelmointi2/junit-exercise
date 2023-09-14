@@ -1,16 +1,16 @@
 # Java & Gradle -projektipohja
 
-Tämä pohja sisältää valmiiksi määritellyt Gradle-skriptit, .gitignore-tiedoston ja .gitattributes-tiedoston auttaakseen sinua aloittamaan Java-projektisi nopeasti ja tehokkaasti.
+Tämä repositorio sisältää valmiiksi määritellyt Gradle-skriptit sekä [.gitignore](./.gitignore)- ja [.gitattributes](./.gitattributes)-tiedostot Java-projektien pohjaksi. Projektipohjan käyttö edellyttää [Javan versiota 17 tai uudempaa](https://code.visualstudio.com/docs/java/java-tutorial#_installing-a-java-development-kit-jdk).
 
 
 ## Gradle ja "wrapper scripts"
 
-Gradle on suosittu "build automation"-työkalu, joka helpottaa projektin sekä riippuvuuksien hallintaa. Gradlew-skriptit (wrapper scripts) ovat osa Gradlea ja ne mahdollistavat Gradlen käytön ilman, että sinun tarvitsee asentaa Gradle erikseen. Voit ajaa projektiin liittyviä Gradle-tehtäviä suoraan näiden skriptien kautta.
+[Gradle](https://gradle.org/) on suosittu "build automation"-työkalu, joka helpottaa projektin sekä sen riippuvuuksien hallintaa. Gradlew-skriptit (wrapper scripts) ovat osa Gradlea ja ne mahdollistavat Gradlen käytön ilman, että sinun tarvitsee asentaa Gradle erikseen. Voit ajaa projektiin liittyviä Gradle-tehtäviä suoraan näiden skriptien kautta.
 
 
 ### Gradlen käyttö
 
-Skriptit ovat saatavilla projektitiedostojen juuressa. Voit käyttää niitä seuraavasti:
+Skriptit löytyvät projektitiedostojen juuresta. Voit käyttää niitä esim. seuraavasti:
 
 **Unix**:
 
@@ -53,7 +53,7 @@ Voit muokata näitä tiedostoja tarpeidesi mukaan.
 5. Lisää oma koodisi ja muokatut tiedostot Git-versionhallintaan:
 
    ```bash
-   git add .
+   git add tiedosto1 tiedosto2 tiedosto3
    git commit -m "Ensimmäinen commit"
    ```
 
@@ -63,10 +63,8 @@ Voit muokata näitä tiedostoja tarpeidesi mukaan.
    git push origin master
    ```
 
-7. Voit sitten tehdä "Pull Requestin" (PR) alkuperäiselle projektille, kun olet valmis jakamaan muutoksesi.
 
-
-## Projekti Avaminen Eclipsessä
+## Projektin avaaminen Eclipsessä
 
 1. Avaa Eclipse ja valitse `File -> Open Projects from File System...`.
 
@@ -75,7 +73,7 @@ Voit muokata näitä tiedostoja tarpeidesi mukaan.
 3. Klikkaa `Finish` avataksesi projektin Eclipse-ssä.
 
 
-## Projekti Avaminen Visual Studio Codessa
+## Projektin avaaminen VS Codessa
 
 1. Avaa Visual Studio Code ja valitse `File -> Open Folder...`.
 
