@@ -1,0 +1,32 @@
+name: GitHub Classroom Workflow
+
+on:
+  - push
+  - workflow_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+
+    # Only run autograding when a student pushes to their repository
+    if: github.actor != 'github-classroom[bot]' && github.repository_owner != 'ohjelmointi2'
+
+    steps:
+
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Install Java 17. See https://github.com/education/autograding/issues/18
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Run autograding
+      - uses: education/autograding@v1
