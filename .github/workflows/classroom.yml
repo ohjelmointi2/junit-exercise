@@ -1,3 +1,6 @@
+# This file defines a GitHub Actions workflow that runs autograding when a student pushes to their repository.
+# For details about tests and points, see the autograding.json file in the .github/classroom/ directory.
+
 name: GitHub Classroom Workflow
 
 on:
@@ -18,7 +21,6 @@ jobs:
     if: github.actor != 'github-classroom[bot]' && github.repository_owner != 'ohjelmointi2'
 
     steps:
-
       # Checkout the repository
       - uses: actions/checkout@v4
 
