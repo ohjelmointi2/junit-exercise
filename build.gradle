@@ -15,6 +15,14 @@ java {
     targetCompatibility = 17
 }
 
+compileJava {
+    options.encoding = "UTF-8"
+}
+
+compileTestJava {
+    options.encoding = "UTF-8"
+}
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()

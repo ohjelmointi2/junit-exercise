@@ -68,9 +68,11 @@ Huomaa, että testiesi tulisi tässä vaiheessa mennä läpi, koska testattavass
 
 ### Osa 2: kattavampi testaus *(soveltaminen, 5 * 15 %)*
 
-Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit olisivat kattavat tai että testattavassa koodissa ei olisi bugeja. Jotta varmistamme, että testisi ovat kattavat, ajetaan testisi myös eri tavoin bugisia versioita vasten 😈. Jos kirjoitit riittävät testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎.
+Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit olisivat kattavat tai että testattavassa koodissa ei olisi bugeja.
 
-Tässä osassa testisi ajetaan viiteen kertaan viittä eri tavoin bugista `formatPrice`-metodia vasten. Saat kustakin suorituksesta pisteet, mikäli buginen versio `formatPrice`-metodista *aiheuttaa virheen* vähintään yhdessä testimetodissasi.
+Jotta varmistamme, että testisi ovat kattavat, ajetaan testisi myös eri tavoin bugisia versioita vasten 😈. Jos kirjoitit riittävät testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokan kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
+
+💡 *Tässä osassa testisi ajetaan viiteen kertaan viittä eri tavoin bugista `formatPrice`-metodia vasten. Saat kustakin suorituksesta pisteet, mikäli buginen versio `formatPrice`-metodista **aiheuttaa virheen** vähintään yhdessä testimetodissasi. Jos testit menevät läpi, tarkoittaa se, että bugi jäi löytymättä. Tällöin myös pisteet jäävät saamatta.*
 
 💡 *Näiden soveltavien testien suorittaminen edellyttää, että toimiva versio `formatPrice`-metodista läpäisee ensin testisi.*
 
