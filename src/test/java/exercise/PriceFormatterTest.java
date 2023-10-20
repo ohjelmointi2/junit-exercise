@@ -13,12 +13,13 @@ public class PriceFormatterTest {
     @Test
     void removeThisTestWhenImplementingYourOwnTests() {
         /*
-         * The formatPrice method takes a double as a parameter and returns a String.
-         * Call the method with different values in your tests and check that the
-         * returned Strings match the specification.
+         * The formatPrice method takes a double as a parameter and returns a String:
          *
          * PriceFormatter formatter = new PriceFormatter();
          * String formatted = formatter.formatPrice(Math.PI); // 3.14 €
+         *
+         * Call the method with different values in your tests and check that the
+         * returned Strings match the specification.
          */
 
         fail("Remove this test and implement your own tests for the PriceFormatter class.");
