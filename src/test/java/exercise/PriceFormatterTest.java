@@ -1,47 +1,26 @@
 package exercise;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
-import price.formatter.PriceFormatter;
-
+/**
+ * Write your tests for the PriceFormatter here. See the specification of the
+ * PriceFormatter and formatPrice method in the PriceFormatter class.
+ */
 public class PriceFormatterTest {
 
-    private PriceFormatter pf = new PriceFormatter();
-
     @Test
-    void formatterLimitsDecimalPlacesToTwo() {
-        String formatted = pf.formatPrice(Math.PI);
+    void removeThisTestWhenImplementingYourOwnTests() {
+        /*
+         * The formatPrice method takes a double as a parameter and returns a String.
+         * Call the method with different values in your tests and check that the
+         * returned Strings match the specification.
+         *
+         * PriceFormatter formatter = new PriceFormatter();
+         * String formatted = formatter.formatPrice(Math.PI); // 3.14 €
+         */
 
-        assertEquals("3,14 €", formatted);
-    }
-
-    @Test
-    void formatterUsesSpaceAsThousandSeparator() {
-        String formatted = pf.formatPrice(123456.78);
-
-        assertEquals("123 456,78 €", formatted);
-    }
-
-    @Test
-    void formatterOmitsDecimalPartIfZero() {
-        String formatted = pf.formatPrice(123456);
-
-        assertEquals("123 456 €", formatted);
-    }
-
-    @Test
-    void formatterExtendsDecimalPartIfNecessary() {
-        String formatted = pf.formatPrice(6.7);
-
-        assertEquals("6,70 €", formatted);
-    }
-
-    @Test
-    void formatterRoundsDecimalPartCorrectly() {
-        String formatted = pf.formatPrice(4.567);
-
-        assertEquals("4,57 €", formatted);
+        fail("Remove this test and implement your own tests for the PriceFormatter class.");
     }
 }
