@@ -2,14 +2,12 @@
 
 Tämä repositorio sisältää joukon Java-harjoituksia, joiden avulla harjoittelet yksikkötestausta JUnit-työkalun avustuksella.
 
-Tästä tiedostosta löydät tehtävänannot sekä ohjeet ratkaisusi testaamiseksi. Tarkemmat ohjeet kunkin metodin ja luokan toiminnasta löydät tehtäväpohjan valmiista Java-luokista.
-
 Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html).
 
 
 ## Tehtävän aloittaminen
 
-Aloita kloonaa Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
+Aloita kloonaamalla Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
 
 ```sh
 git clone https://github.com/varmista-etta-github-tunnuksesi-on-repositorion-osoitteessa.git
@@ -28,16 +26,34 @@ Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"
 
 💡 *Voit lähettää ratkaisusi arvioitavaksi niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti. Varmista kuitenkin, että viimeisin suoritus tuottaa parhaat pisteet, koska vain viimeisimmät pisteet jäävät voimaan.*
 
+## Tehtävä
 
-### Osa 1: *(perusteet, 30 %)*
+Tässä tehtävässä sinun tulee kirjoittaa yksikkötestejä valmiissa `PriceFormatter`-luokassa olevalle `formatPrice`-metodille. Metodi saa parametrinaan liukuluvun ja se palauttaa annetun liukuluvun merkkijonoksi muotoiltuna tiettyjen sääntöjen mukaisesti.
 
-### Osa 2: *(perusteet, 30 %)*
+Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,78 €"`. Muotoilun suhteen on seuraavat tarkentavat säännöt:
 
+1. Tuhaterottimena tulee käyttää välilyöntiä.
+1. Desimaalierottimena tulee käyttää pilkkua.
+1. Desimaaliosassa kahden numeron pituinen, paitsi jos desimaaliosa on nolla. Tässä tapauksessa desimaaliosa jätetään kokonaan pois.
+1. Hinnan lopussa on oltava Euro-symboli `€`.
+
+**Huomaa, että sinun ei kuulu itse toteuttaa yllä esitettyä metodia tai siihen kuuluvia ehtoja.** Metodin toteuttamisen sijasta harjoittelemme sen testaamista.
+
+### Osa 1: *(perusteet, 25 %)*
+
+Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/ohjelmointi2/unittests/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis metodi tosiaan toimii yllä kuvatulla tavalla. Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
 ```sh
-./gradlew test --tests TODO      # unix
-gradlew.bat test --tests TODO    # windows
+./gradlew test --tests PriceFormatterTest      # unix
+gradlew.bat test --tests PriceFormatterTest    # windows
 ```
+
+Huomaa, että testiesi tulisi tässä vaiheessa mennä läpi, koska testattavassa luokassa ei (pitäisi) olla loogisia virheitä.
+
+
+### Osa 2: *(soveltaminen, 5 * 15 %)*
+
+
 
 ## Lisenssi ja tekijät
 
