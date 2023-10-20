@@ -1,94 +1,46 @@
-# Java & Gradle -projektipohja
+# Yksikkötestaus JUnit-työkalulla
 
-Tämä repositorio sisältää valmiiksi määritellyt Gradle-skriptit sekä [.gitignore](./.gitignore)- ja [.gitattributes](./.gitattributes)-tiedostot Java-projektien pohjaksi. Projektipohjan käyttö edellyttää [Javan versiota 17 tai uudempaa](https://code.visualstudio.com/docs/java/java-tutorial#_installing-a-java-development-kit-jdk).
+Tämä repositorio sisältää joukon Java-harjoituksia, joiden avulla harjoittelet yksikkötestausta JUnit-työkalun avustuksella.
+
+Tästä tiedostosta löydät tehtävänannot sekä ohjeet ratkaisusi testaamiseksi. Tarkemmat ohjeet kunkin metodin ja luokan toiminnasta löydät tehtäväpohjan valmiista Java-luokista.
+
+Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html).
 
 
-## Gradle ja "wrapper scripts"
+## Tehtävän aloittaminen
 
-[Gradle](https://gradle.org/) on suosittu "build automation"-työkalu, joka helpottaa projektin sekä sen riippuvuuksien hallintaa. Gradlew-skriptit (wrapper scripts) ovat osa Gradlea ja ne mahdollistavat Gradlen käytön ilman, että sinun tarvitsee asentaa Gradle erikseen. Voit ajaa projektiin liittyviä Gradle-tehtäviä suoraan näiden skriptien kautta.
+Aloita kloonaa Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
 
-
-### Gradlen käyttö
-
-Skriptit löytyvät projektitiedostojen juuresta. Voit käyttää niitä esim. seuraavasti:
-
-**Unix**:
-
-```bash
-./gradlew build    # kääntää projektin ja tuottaa suoritettavan JAR-tiedoston
-./gradlew test     # suorittaa projektiin liittyvät testit
+```sh
+git clone https://github.com/varmista-etta-github-tunnuksesi-on-repositorion-osoitteessa.git
 ```
 
-**Windows**:
+Kloonattuasi projektin omalle koneellesi, avaa se koodieditorissasi.
 
-```powershell
-.\gradlew.bat build    # kääntää projektin ja tuottaa suoritettavan JAR-tiedoston
-.\gradlew.bat test     # suorittaa projektiin liittyvät testit
+
+## Vastausten lähettäminen
+
+Kun olet saanut osan tai kaikki tehtävistä ratkaistua ja commitoinut vastauksesi, lähetä ratkaisut arvioitavaksi `git push`-komennolla. Git push käynnistää automaattisesti GitHub actions -workflow:n, joka kääntää sekä testaa ratkaisusi ja antaa jokaisesta testistä joko hyväksytyn tai hylätyn tuloksen.
+
+Kun GitHub Actions on saanut koodisi suoritettua, näet tuloksen GitHub-repositoriosi [Actions-välilehdellä](../../actions/workflows/classroom.yml). Arvioinnin valmistumiseen menee tyypillisesti pari minuuttia.
+
+Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"* -suoritusta, saat tarkemmat tiedot tehtävän arvioinnista. Sivun alaosassa näkyy saamasi pisteet. Klikkaamalla "Autograding"-otsikkoa pääset katsomaan tarkemmin arvioinnissa suoritetut vaiheet ja niiden tulokset. Kuvitetun ohjeen aiheesta löydät GitHubin dokumentista [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
+
+💡 *Voit lähettää ratkaisusi arvioitavaksi niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti. Varmista kuitenkin, että viimeisin suoritus tuottaa parhaat pisteet, koska vain viimeisimmät pisteet jäävät voimaan.*
+
+
+### Osa 1: *(perusteet, 30 %)*
+
+### Osa 2: *(perusteet, 30 %)*
+
+
+```sh
+./gradlew test --tests TODO      # unix
+gradlew.bat test --tests TODO    # windows
 ```
 
-Ensimmäisen komennon suorittamisen yhteydessä Gradle lataa tarvittavat riippuvuudet automaattisesti.
+## Lisenssi ja tekijät
 
+Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA -lisenssillä](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## .gitignore ja .gitattributes
-
-Tämä pohja sisältää myös valmiiksi määritellyt `.gitignore`- ja `.gitattributes`-tiedostot. `.gitignore`:ssa on määritelty, mitkä tiedostot jätetään versionhallinnan ulkopuolelle, kun taas `.gitattributes`-tiedostossa on määritetty eri tiedostotyypeille yhtenäiset rivinvaihtomerkit.
-
-Voit muokata näitä tiedostoja tarpeidesi mukaan.
-
-
-## Miten käytän tätä pohjaa
-
-1. Forkkaa tämä projekti omalle GitHub-tilillesi. Käytä "Fork" -painiketta tämän projektin GitHub-sivulla.
-
-2. Kloonaa forkkaamasi projekti omalle tietokoneellesi:
-
-   ```bash
-   git clone https://github.com/OMA_KÄYTTÄJÄTUNNUKSESI/projekti.git
-   ```
-
-3. Muokkaa projektin tiedostoja ja koodia tarpeidesi mukaan.
-
-4. Käytä Gradle-skriptejä suorittaaksesi erilaisia tehtäviä projektissasi.
-
-5. Lisää oma koodisi ja muokatut tiedostot Git-versionhallintaan:
-
-   ```bash
-   git add tiedosto1 tiedosto2 tiedosto3
-   git commit -m "Ensimmäinen commit"
-   ```
-
-6. Pushaa muutokset GitHubiin omalle forkkaamallesi projektille:
-
-   ```bash
-   git push origin master
-   ```
-
-
-## Projektin avaaminen Eclipsessä
-
-1. Avaa Eclipse ja valitse `File -> Open Projects from File System...`.
-
-2. Valitse `Directory...` ja valitse projektin kansio, jonka olet aiemmin kloonannut.
-
-3. Klikkaa `Finish` avataksesi projektin Eclipse-ssä.
-
-
-## Projektin avaaminen VS Codessa
-
-1. Avaa Visual Studio Code ja valitse `File -> Open Folder...`.
-
-2. Valitse projektin kansio, jonka olet aiemmin kloonannut ja klikkaa `Open`.
-
-3. Voit nyt muokata, rakentaa ja suorittaa projektiasi Visual Studio Codessa.
-
-
-
-## Lisätietoja
-
-Lisätietoja Gradlesta ja sen käytöstä löydät [Gradlen virallisilta verkkosivuilta](https://gradle.org/).
-
-Hyvää koodausta ja onnea projektisi kanssa!
-
------
-
-Tämän tiedoston luonnissa on hyödynnetty [GhatGPT 3.5](https://chat.openai.com/) -kielimallia.
+Tehtävänannon, lähdekoodien ja testien toteutuksessa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub copilot -tekoälyavustinta.
