@@ -1,8 +1,10 @@
-package ohjelmointi2.unittests;
+package exercise;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import price.formatter.PriceFormatter;
 
 public class PriceFormatterTest {
 
