@@ -1,15 +1,64 @@
 {
-    "tests": [
-      {
-        "name": "Run tests",
-        "setup": "",
-        "run": "./gradlew test",
-        "input": "",
-        "output": "",
-        "comparison": "exact",
-        "timeout": 1,
-        "points": 100
-      }
-    ]
-  }
-  
+  "tests": [
+    {
+      "name": "Run tests",
+      "setup": "",
+      "run": "./gradlew test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 25
+    },
+    {
+      "name": "FormatPrice with bug #1",
+      "setup": "./gradlew cleanTest test",
+      "run": "! BUG=tooManyDecimalPlaces ./gradlew cleanTest test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "FormatPrice with bug #2",
+      "setup": "./gradlew cleanTest test",
+      "run": "! BUG=dotUsedAsThousandSeparator ./gradlew cleanTest test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "FormatPrice with bug #3",
+      "setup": "./gradlew cleanTest test",
+      "run": "! BUG=zeroNotOmittedInDecimals ./gradlew cleanTest test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "FormatPrice with bug #4",
+      "setup": "./gradlew cleanTest test",
+      "run": "! BUG=decimalPartTooShort ./gradlew cleanTest test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "FormatPrice with bug #5",
+      "setup": "./gradlew cleanTest test",
+      "run": "! BUG=decimalPartRoundedIncorrectly ./gradlew cleanTest test",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    }
+  ]
+}
