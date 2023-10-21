@@ -17,14 +17,14 @@ public class PriceFormatter {
      * @return the formatted price as a string
      */
     public String formatPrice(double price) {
-        // https://stackoverflow.com/a/5054217
+        // the decimal part may be too short
         NumberFormat formatter = NumberFormat.getNumberInstance(Locale.GERMAN);
-        formatter.setMinimumFractionDigits(2);
         formatter.setMaximumFractionDigits(2);
 
         return formatter
                 .format(price)
                 .replace(",00", "")
+                .replace(",0", "")
                 .replace(".", " ")
                 + " €";
     }

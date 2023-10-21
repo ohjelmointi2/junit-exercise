@@ -17,10 +17,12 @@ public class PriceFormatter {
      * @return the formatted price as a string
      */
     public String formatPrice(double price) {
-        // https://stackoverflow.com/a/5054217
         NumberFormat formatter = NumberFormat.getNumberInstance(Locale.GERMAN);
         formatter.setMinimumFractionDigits(2);
         formatter.setMaximumFractionDigits(2);
+
+        // unwanted rounding
+        formatter.setRoundingMode(java.math.RoundingMode.DOWN);
 
         return formatter
                 .format(price)

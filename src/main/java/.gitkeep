@@ -1,3 +1,0 @@
-Git does not keep empty directories. This file has been added just to prevent
-git from removing the empty source folder.
-See more at https://stackoverflow.com/a/7229996

@@ -17,15 +17,13 @@ public class PriceFormatter {
      * @return the formatted price as a string
      */
     public String formatPrice(double price) {
-        // https://stackoverflow.com/a/5054217
+        // dot used as a thousand separator
         NumberFormat formatter = NumberFormat.getNumberInstance(Locale.GERMAN);
-        formatter.setMinimumFractionDigits(2);
-        formatter.setMaximumFractionDigits(2);
 
-        return formatter
-                .format(price)
-                .replace(",00", "")
-                .replace(".", " ")
-                + " €";
+        var digits = (price % 1 != 0) ? 2 : 0;
+        formatter.setMinimumFractionDigits(digits);
+        formatter.setMaximumFractionDigits(digits);
+
+        return formatter.format(price) + " €";
     }
 }

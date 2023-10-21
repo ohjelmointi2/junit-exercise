@@ -32,9 +32,6 @@ dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    // This JAR file contains the class that we are testing in the exercise:
-    implementation files('libs/priceformatter.jar')
 }
 
 tasks.named('test') {

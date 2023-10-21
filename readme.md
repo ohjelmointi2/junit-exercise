@@ -38,23 +38,34 @@ PriceFormatter formatter = new PriceFormatter();
 String price = formatter.formatPrice(3.141592653589793); // Palauttaa "3,14 €"
 ```
 
-Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,78 €"`. Muotoilun suhteen on seuraavat tarkentavat säännöt:
+Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,79 €"`. Muotoilun suhteen on seuraavat tarkentavat säännöt:
 
-1. Tuhaterottimena tulee käyttää välilyöntiä.
-1. Desimaalierottimena tulee käyttää pilkkua.
-1. Desimaaliosassa kahden numeron pituinen, seuraavin tarkennuksin:
-    1. Jos desimaaliosa on nolla, jätetään desimaaliosa kokonaan pois.
-    1. Desimaaliosa tulee pyöristää lähimpään sadasosaan eli senttiin.
-1. Hinnan lopussa on oltava Euro-symboli `€`.
+1. Tuhaterottimena on välilyönti.
+1. Desimaalierottimena on pilkku.
+1. Desimaaliosa on kahden numeron pituinen, seuraavin tarkennuksin:
+    1. Desimaaliosa pyöristetään lähimpään sadasosaan (eli senttiin).
+    1. Jos desimaaliosa on pyöristyksen jälkeen nolla, jätetään desimaaliosa kokonaan pois.
+1. Hinnan lopussa on Euro-symboli `€`.
 
 **Huomaa, että sinun ei tarvitse itse toteuttaa yllä esitettyä metodia tai siihen kuuluvia ehtoja.** Metodin toteuttamisen sijasta harjoittelemme valmiin metodin *testaamista*.
 
 
 ### Osa 1: JUnit-testien kirjoittaminen *(perusteet, 25 %)*
 
-Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla.
+Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla. Suosittelemme, että kirjoitat jokaista sääntöä kohden oman erillisen testimetodin.
 
-Tässä tehtävässä projektipohja ei sisällä testattavan luokan lähdekoodia, vaan luokka on valmiiksi käännetyssä [jar-paketissa](./libs/). Luokan testaamiseksi et tarvitse sen lähdekoodia: tärkeämpää on, että tiedossasi on yllä esitetyt metodin toimintaa koskevat *vaatimukset*.
+Testattava `PriceFormatter`-luokka sijaitsee `price.formatter`-paketissa ja se tulee ottaa testiluokassa käyttöön `import`-komennolla:
+
+```java
+import price.formatter.PriceFormatter;
+```
+
+Tämän jälkeen kutsu testimetodeissasi `formatPrice`-metodia erilaisilla parametreilla ja varmista, että metodin palauttamat arvot ovat esitettyjen sääntöjen mukaisia:
+
+```java
+PriceFormatter formatter = new PriceFormatter();
+String result = formatter.formatPrice(Math.PI); // pitäisi olla 3.14 €
+```
 
 Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
@@ -63,19 +74,24 @@ Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https:/
 gradlew.bat test     # windows
 ```
 
-Huomaa, että testiesi tulisi tässä vaiheessa mennä läpi, koska testattavassa metodissa ei *pitäisi* olla loogisia virheitä.
+✅ Huomaa, että testiesi tulisi tässä vaiheessa mennä läpi, koska testattavassa metodissa ei *pitäisi* olla loogisia virheitä.
+
+💡 *Metodin testaamiseksi sinun ei tarvitse perehtyä sen lähdekoodiin. Tärkeämpää on, että tiedossasi on yllä esitetyt metodin toimintaa koskevat **vaatimukset**.*
+
+⛔ *Et saa tehdän lainkaan muutoksia `PriceFormatter`-luokkaan.*
 
 
 ### Osa 2: kattavampi testaus *(soveltaminen, 5 * 15 %)*
 
-Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit olisivat kattavat tai että testattavassa koodissa ei olisi bugeja.
+Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit olisivat kattavat tai että testattavassa koodissa ei olisi bugeja. Jotta varmistamme, että testisi ovat kattavat, ajetaan testisi myös eri tavoin bugisia versioita vasten 😈. Kirjoittamiesi testien tulee löytää nämä bugit.
 
-Jotta varmistamme, että testisi ovat kattavat, ajetaan testisi myös eri tavoin bugisia versioita vasten 😈. Jos kirjoitit riittävät testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokan kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
+Jos kirjoitit kattavat testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokan kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
 
 💡 *Tässä osassa testisi ajetaan viiteen kertaan viittä eri tavoin bugista `formatPrice`-metodia vasten. Saat kustakin suorituksesta pisteet, mikäli buginen versio `formatPrice`-metodista **aiheuttaa virheen** vähintään yhdessä testimetodissasi. Jos testit menevät läpi, tarkoittaa se, että bugi jäi löytymättä. Tällöin myös pisteet jäävät saamatta.*
 
-💡 *Näiden soveltavien testien suorittaminen edellyttää, että toimiva versio `formatPrice`-metodista läpäisee ensin testisi.*
+💡 *Näiden soveltavien testien suorittaminen edellyttää, että alkuperäinen toimiva versio `formatPrice`-metodista läpäisee ensin testisi.*
 
+🚀 *Tehtävän tarkastuksessa sovelletaan menetelmää nimeltä mutaatiotestaus: "Mutation testing is used to design new software tests and evaluate the quality of existing software tests. Mutation testing involves modifying a program in small ways." [(Wikipedia)](https://en.wikipedia.org/wiki/Mutation_testing)*
 
 ## Lisenssi ja tekijät
 

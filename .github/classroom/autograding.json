@@ -1,64 +1,64 @@
 {
-  "tests": [
-    {
-      "name": "Part 1: Run tests",
-      "setup": "",
-      "run": "./gradlew test",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 1,
-      "points": 25
-    },
-    {
-      "name": "Part 2: bug #1 - tests should not pass",
-      "setup": "./gradlew cleanTest test",
-      "run": "! BUG=tooManyDecimalPlaces ./gradlew cleanTest test",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 1,
-      "points": 15
-    },
-    {
-      "name": "Part 2: bug #2  - tests should not pass",
-      "setup": "./gradlew cleanTest test",
-      "run": "! BUG=dotUsedAsThousandSeparator ./gradlew cleanTest test",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 1,
-      "points": 15
-    },
-    {
-      "name": "Part 2: bug #3  - tests should not pass",
-      "setup": "./gradlew cleanTest test",
-      "run": "! BUG=zeroNotOmittedInDecimals ./gradlew cleanTest test",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 1,
-      "points": 15
-    },
-    {
-      "name": "Part 2: bug #4  - tests should not pass",
-      "setup": "./gradlew cleanTest test",
-      "run": "! BUG=decimalPartTooShort ./gradlew cleanTest test",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 1,
-      "points": 15
-    },
-    {
-      "name": "Part 2: bug #5  - tests should not pass",
-      "setup": "./gradlew cleanTest test",
-      "run": "! BUG=decimalPartRoundedIncorrectly ./gradlew cleanTest test",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 1,
-      "points": 15
-    }
-  ]
+    "tests": [
+        {
+            "name": "Part 1: Run tests",
+            "setup": "",
+            "run": "./gradlew test",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 1,
+            "points": 25
+        },
+        {
+            "name": "Part 2: bug #1 - tests should not pass",
+            "setup": "cp .github/classroom/PriceFormatter.txt src/main/java/price/formatter/PriceFormatter.java && ./gradlew clean test",
+            "run": "cp .github/classroom/bug1.txt src/main/java/price/formatter/PriceFormatter.java && ! ./gradlew clean test",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 1,
+            "points": 15
+        },
+        {
+            "name": "Part 2: bug #2  - tests should not pass",
+            "setup": "cp .github/classroom/PriceFormatter.txt src/main/java/price/formatter/PriceFormatter.java && ./gradlew clean test",
+            "run": "cp .github/classroom/bug2.txt src/main/java/price/formatter/PriceFormatter.java && ! ./gradlew clean test",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 1,
+            "points": 15
+        },
+        {
+            "name": "Part 2: bug #3  - tests should not pass",
+            "setup": "cp .github/classroom/PriceFormatter.txt src/main/java/price/formatter/PriceFormatter.java && ./gradlew clean test",
+            "run": "cp .github/classroom/bug3.txt src/main/java/price/formatter/PriceFormatter.java && ! ./gradlew clean test",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 1,
+            "points": 15
+        },
+        {
+            "name": "Part 2: bug #4  - tests should not pass",
+            "setup": "cp .github/classroom/PriceFormatter.txt src/main/java/price/formatter/PriceFormatter.java && ./gradlew clean test",
+            "run": "cp .github/classroom/bug4.txt src/main/java/price/formatter/PriceFormatter.java && ! ./gradlew clean test",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 1,
+            "points": 15
+        },
+        {
+            "name": "Part 2: bug #5  - tests should not pass",
+            "setup": "cp .github/classroom/PriceFormatter.txt src/main/java/price/formatter/PriceFormatter.java && ./gradlew clean test",
+            "run": "cp .github/classroom/bug5.txt src/main/java/price/formatter/PriceFormatter.java && ! ./gradlew clean test",
+            "input": "",
+            "output": "",
+            "comparison": "exact",
+            "timeout": 1,
+            "points": 15
+        }
+    ]
 }
