@@ -17,9 +17,6 @@ jobs:
     name: Autograding
     runs-on: ubuntu-latest
 
-    # Only run autograding when a student pushes to their repository
-    if: github.actor != 'github-classroom[bot]' && github.repository_owner != 'ohjelmointi2'
-
     steps:
       # Checkout the repository
       - uses: actions/checkout@v4
@@ -30,5 +27,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # Make sure compilation succeeds before attempting to run autograding
+      - name: Copile the source and tests
+        run: ./gradlew compileJava compileTestJava
+
       # Run autograding
       - uses: education/autograding@v1
+
+        # Only run autograding when a student pushes to their repository
+        if: github.actor != 'github-classroom[bot]' && github.repository_owner != 'ohjelmointi2'
