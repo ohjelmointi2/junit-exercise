@@ -28,7 +28,7 @@ jobs:
           java-version: '17'
 
       # Make sure compilation succeeds before attempting to run autograding
-      - name: Copile the source and tests
+      - name: Compile source code
         run: ./gradlew compileJava compileTestJava
 
       # Run autograding
