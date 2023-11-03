@@ -69,9 +69,9 @@ String result = formatter.formatPrice(Math.PI); // pitäisi olla 3.14 €
 
 Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
-```sh
+```
 ./gradlew test       # unix
-gradlew.bat test     # windows
+.\gradlew.bat test   # windows
 ```
 
 ✅ Huomaa, että testiesi tulisi tässä vaiheessa mennä läpi, koska testattavassa metodissa ei *pitäisi* olla loogisia virheitä.
