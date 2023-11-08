@@ -49,7 +49,6 @@ Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,
 
 **Huomaa, että sinun ei tarvitse itse toteuttaa yllä esitettyä metodia tai siihen kuuluvia ehtoja.** Metodin toteuttamisen sijasta harjoittelemme valmiin metodin *testaamista*.
 
-
 ### Osa 1: JUnit-testien kirjoittaminen *(perusteet, 25 %)*
 
 Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla. Suosittelemme, että kirjoitat jokaista sääntöä kohden oman erillisen testimetodin.
@@ -79,6 +78,8 @@ Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https:/
 💡 *Metodin testaamiseksi sinun ei tarvitse perehtyä sen lähdekoodiin. Tärkeämpää on, että tiedossasi on yllä esitetyt metodin toimintaa koskevat **vaatimukset**.*
 
 ⛔ *Et saa tehdän lainkaan muutoksia `PriceFormatter`-luokkaan.*
+
+💡 *Jos käytätte testeissänne lukuja, joka asettuvat tasan sadasosien "puoliväliin", saatatte törmätä liukulukujen rajallista tarkkuutta koskeviin ongelmiin. Ongelma ei johdu omasta koodistanne, testattavasta koodista eikä Javasta, vaan siitä, miten tietokoneet käsittelevät numeroita. Tarkempi selitys ongelmasta löytyy tämän repositorion tiedostosta [rounding.md](./rounding.md) tai artikkelista ["What Every Computer Scientist Should Know About Floating-Point Arithmetic" (oracle.com)](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).*
 
 
 ### Osa 2: kattavampi testaus *(soveltaminen, 5 * 15 %)*
