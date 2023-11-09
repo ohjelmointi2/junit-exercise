@@ -79,7 +79,7 @@ Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https:/
 
 ⛔ *Et saa tehdän lainkaan muutoksia `PriceFormatter`-luokkaan.*
 
-💡 *Jos käytätte testeissänne lukuja, joka asettuvat tasan sadasosien "puoliväliin", saatatte törmätä liukulukujen rajallista tarkkuutta koskeviin ongelmiin. Ongelma ei johdu omasta koodistanne, testattavasta koodista eikä Javasta, vaan siitä, miten tietokoneet käsittelevät numeroita. Tarkempi selitys ongelmasta löytyy tämän repositorion tiedostosta [rounding.md](./rounding.md) tai artikkelista ["What Every Computer Scientist Should Know About Floating-Point Arithmetic" (oracle.com)](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).*
+💡 *Jos käytät testeissäsi lukuja, joka asettuvat tasan sadasosien "puoliväliin", saatat törmätä liukulukujen rajallista tarkkuutta koskeviin ongelmiin. Ongelma ei johdu Javasta eikä omasta tai testattavasta koodista, vaan siitä, miten tietokoneet käsittelevät desimaaliosia. Tarkempi selitys aiheesta löytyy tämän repositorion tiedostosta [rounding.md](./rounding.md) tai artikkelista ["What Every Computer Scientist Should Know About Floating-Point Arithmetic" (oracle.com)](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).*
 
 
 ### Osa 2: kattavampi testaus *(soveltaminen, 5 * 15 %)*
