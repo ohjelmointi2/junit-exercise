@@ -121,6 +121,8 @@ Voit suorittaa testiluokkasi tuttuun tapaan joko koodieditorillasi tai Gradlen a
 
 💡 *Tässä vaiheessa testisi toivottavasti löytävät metodissa valmiiksi olevia bugeja, joten kaikki testit eivät vielä mene läpi.*
 
+💡 *Muista lisätä uusi `src/test/refactoring`-hakemisto ja `DayOfYearTest.java`-tiedosto versionhallintaan `git add`-komennolla. Katso tarvittaessa `git status`, joka kertoo miten tämä tehdään.*
+
 
 ### Osa 2.2: `dayOfYear`-metodin korjaus ja refaktorointi
 
