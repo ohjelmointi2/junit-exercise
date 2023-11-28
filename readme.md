@@ -51,7 +51,7 @@ Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,
 
 ### PriceFormatterTest *(perusteet)*
 
-Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/exercise/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla. Suosittelemme, että kirjoitat jokaista sääntöä kohden oman erillisen testimetodin.
+Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/price/formatter/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla. Suosittelemme, että kirjoitat jokaista sääntöä kohden oman erillisen testimetodin.
 
 Testattava `PriceFormatter`-luokka sijaitsee `price.formatter`-paketissa ja se tulee ottaa testiluokassa käyttöön `import`-komennolla:
 
@@ -86,7 +86,7 @@ Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https:/
 
 Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit olisivat kattavat tai että testattavassa koodissa ei olisi bugeja. Jotta varmistamme, että testisi ovat kattavat, ajetaan testisi myös **viittä eri tavoin bugista versioita vasten** 😈. Kirjoittamiesi testien tulee löytää näissä versioissa piilevät bugit.
 
-Jos kirjoitit kattavat testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [`PriceFormatterTest`-luokan](./src/test/java/exercise/PriceFormatterTest.java) kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
+Jos kirjoitit kattavat testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [`PriceFormatterTest`-luokan](./src/test/java/price/formatter/PriceFormatterTest.java) kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
 
 💡 *Tässä osassa testisi ajetaan viiteen kertaan viittä eri tavoin bugista `formatPrice`-metodia vasten. Saat kustakin suorituksesta pisteet, mikäli buginen versio `formatPrice`-metodista **aiheuttaa virheen** vähintään yhdessä testimetodissasi. Jos testit menevät läpi, tarkoittaa se, että bugi jäi löytymättä. Tällöin myös pisteet jäävät saamatta.*
 

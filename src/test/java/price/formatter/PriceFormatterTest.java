@@ -1,10 +1,8 @@
-package exercise;
+package price.formatter;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
-
-import price.formatter.PriceFormatter;
 
 /**
  * Write your tests for the PriceFormatter here. See the specification of the
