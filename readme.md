@@ -82,6 +82,7 @@ Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit oli
 
 Jos kirjoitit kattavat testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [`PriceFormatterTest`-luokan](./src/test/java/price/formatter/PriceFormatterTest.java) kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
 
+
 💡 *Tässä osassa testisi ajetaan viiteen kertaan viittä eri tavoin bugista `formatPrice`-metodia vasten. Saat kustakin suorituksesta pisteet, mikäli buginen versio `formatPrice`-metodista **aiheuttaa virheen** vähintään yhdessä testimetodissasi. Jos testit menevät läpi, tarkoittaa se, että bugi jäi löytymättä. Tällöin myös pisteet jäävät saamatta.*
 
 💡 *Näiden soveltavien testien suorittaminen edellyttää, että alkuperäinen toimiva versio `formatPrice`-metodista läpäisee ensin omat testisi.*
@@ -127,7 +128,7 @@ Tähän asti olet ohjelmointiopinnoissasi kenties keskittynyt lähinnä saamaan 
 
 Tulet siis itse jatkokehittämään jonkun toisen vuosia sitten kirjoittamaa koodia, aivan kuten joku muu tulee jatkokehittämään sinun koodiasi. Tällöin on erittäin tärkeää, että koodi on muokattavissa ilman odottamattomia rikkoutumisia ja että muut kehittäjät ymmärtävät toistensa koodia ja pystyvät hyödyntämään ja muokkaamaan sitä.
 
-Kun luet `dayOfYear`-metodin sisältämää koodia tarkemmin, huomaat, että siinä on käytetty ohjelmoinnin perusrakenteita melko suppeasti. Koodi koostuukin erittäin pitkästä `if-else`-rakenteesta sekä samanlaisista kokonaislukujen yhteenlaskuista. Samat numerot myös esiintyvät koodissa toistuvasti ja saattavat olla virheellisiä.
+Kun luet `dayOfYear`-metodin sisältämää koodia tarkemmin, huomaat, että siinä on käytetty ohjelmoinnin perusrakenteita melko suppeasti. Koodi koostuukin erittäin pitkästä `if-else`-rakenteesta sekä samanlaisista kokonaislukujen yhteenlaskuista. Samat numerot myös esiintyvät koodissa toistuvasti ja ne saattavat olla virheellisiä.
 
 Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista [`Year`-luokasta ja sen `isLeap`-metodista](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Year.html#isLeap(long)). Voit myös tarkistaa eri kuukausien oikeat pituudet esimerkiksi [Wikipediasta](https://fi.wikipedia.org/wiki/Kuukausi). Kuukausien pituuksien "kovakoodaus" ei toisaalta ole välttämättä kannattavaa, koska Javasta löytyy valmiiksi sekä [Month](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Month.html)- että [YearMonth](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/YearMonth.html)-luokat, jotka [sisältävät logiikkaa kuukausien pituuksien laskemiseksi](https://github.com/AdoptOpenJDK/openjdk-jdk9u/blob/9347c48cc4ce5d966c7f0c0a751c313eb0cba99a/jdk/src/java.base/share/classes/java/time/Month.java#L425-L437).
 
@@ -145,11 +146,11 @@ Bugien korjauksessa sinulle voi olla hyötyä Javan valmiista [`Year`-luokasta j
 
 Tutustu seuraaviin "koodin hajuihin" esimerkkikoodissa ja parantele koodia parhaasi mukaan:
 
-- Don't Repeat Yourself
-- Comments Where Needed
-- Fail Fast
-- Avoid Magic Numbers
-- One Purpose For Each Variable
+- [Don't Repeat Yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+- [Comments Where Needed](https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/)
+- [Fail Fast](https://en.wikipedia.org/wiki/Fail-fast)
+- [Avoid Magic Numbers](https://en.wikipedia.org/wiki/Magic_number_(programming))
+- [One Purpose For Each Variable](https://en.wikipedia.org/wiki/Single-responsibility_principle)
 
 Edellä mainittu lista koodin "hajuista" on käyty läpi tämän saman esimerkkikoodin avulla osoitteessa [https://web.mit.edu/6.005/www/fa16/classes/04-code-review/](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/). Voit käyttää myös muita lähteitä.
 
@@ -169,7 +170,7 @@ Edellä mainittu lista koodin "hajuista" on käyty läpi tämän saman esimerkki
 Voit halutessasi lisätä metodiin tarkastuksia ja heittää esimerkiksi `IllegalArgumentException`-poikkeuksen, mikäli metodille annetut numerot eivät vastaa todellista päivämäärää. Tämä ei kuitenkaan ole tehtävän kannalta välttämätöntä, emmekä laske virheellisiä syötteitä tämän metodin bugeiksi.
 
 
-### Tehtävä 2:n arviointi *(25 % + 25 %)*
+### Tehtävän pisteytys *(25 % + 25 %)*
 
 `DayOfYear`-tehtävä arvioidaan automaattisesti kahdessa osassa. Ensimmäisessä osassa suoritamme oman `DayOfYearTest`-testiluokkasi, jonka tulee läpäistä kaikki kirjoittamasi testit.
 
@@ -178,7 +179,7 @@ Voit halutessasi lisätä metodiin tarkastuksia ja heittää esimerkiksi `Illega
 .\gradlew.bat test --tests DayOfYearTest   # windows
 ```
 
-Toisessa osassa suoritamme erillisen testiluokan, jossa varmistetaan, että `dayOfYear`-metodi toimii oikein tekemiesi korjausten jälkeen.
+Toisessa osassa suoritamme erillisen testiluokan, jossa varmistetaan, että `dayOfYear`-metodi toimii oikein tekemiesi korjausten jälkeen. Mikäli erillinen testiluokka havaitsee virheitä automaattisessa arvioinnissa, lue tarkasti [Actions-välilehdeltä](../../actions/workflows/classroom.yml) löytyvä raportti testien suorituksesta.
 
 
 
