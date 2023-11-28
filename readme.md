@@ -53,13 +53,7 @@ Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,
 
 Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/price/formatter/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla. Suosittelemme, että kirjoitat jokaista sääntöä kohden oman erillisen testimetodin.
 
-Testattava `PriceFormatter`-luokka sijaitsee `price.formatter`-paketissa ja se tulee ottaa testiluokassa käyttöön `import`-komennolla:
-
-```java
-import price.formatter.PriceFormatter;
-```
-
-Tämän jälkeen kutsu testimetodeissasi `formatPrice`-metodia erilaisilla parametreilla ja varmista, että metodin palauttamat arvot ovat esitettyjen sääntöjen mukaisia:
+Kutsu testimetodeissasi `formatPrice`-metodia erilaisilla parametreilla ja varmista, että metodin palauttamat arvot ovat esitettyjen sääntöjen mukaisia:
 
 ```java
 PriceFormatter formatter = new PriceFormatter();
