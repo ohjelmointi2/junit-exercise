@@ -43,7 +43,7 @@ Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,
 1. Tuhaterottimena on välilyönti.
 1. Desimaalierottimena on pilkku.
 1. Desimaaliosa on kahden numeron pituinen, seuraavin tarkennuksin:
-    1. Desimaaliosa pyöristetään lähimpään sadasosaan (eli senttiin).
+    1. Desimaaliosa pyöristetään lähimpään sadasosaan (eli senttiin). [Lisävinkki](./rounding.md).
     1. Jos desimaaliosa on pyöristyksen jälkeen nolla, jätetään desimaaliosa kokonaan pois.
 1. Hinnan lopussa on Euro-symboli `€`.
 
