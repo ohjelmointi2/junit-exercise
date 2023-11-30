@@ -1,7 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
-import java.time.YearMonth;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,74 +12,76 @@ public class DOYTest {
     void testFirstDayOfYear() {
         int result = DayOfYear.dayOfYear(1, 1, 2020);
 
-        assertEquals(1, result);
+        assertEquals(1, result, "First day of year should be 1 but it was " + result);
     }
 
     @Test
     void testLastDayOfNormalYear() {
-        int result = DayOfYear.dayOfYear(12, 31, 2019);
-
-        assertEquals(365, result);
+        assertDayOfYear(365, LocalDate.of(2017, 12, 31));
+        assertDayOfYear(365, LocalDate.of(2018, 12, 31));
+        assertDayOfYear(365, LocalDate.of(2019, 12, 31));
     }
 
     @Test
     void testLastDayOfLeapYear() {
-        assertEquals(366, DayOfYear.dayOfYear(12, 31, 2020));
+        assertDayOfYear(366, LocalDate.of(2020, 12, 31));
+        assertDayOfYear(366, LocalDate.of(2024, 12, 31));
+        assertDayOfYear(366, LocalDate.of(2028, 12, 31));
     }
 
     @Test
-    void testMiddleOfTheYear() {
-        // leap year
-        assertEquals(172, DayOfYear.dayOfYear(6, 20, 2020));
-
-        // normal year
-        assertEquals(171, DayOfYear.dayOfYear(6, 20, 2019));
+    void testEachDayOnNormalYear() {
+        testDaysOnYear(2019);
     }
 
     @Test
-    void testFirstDaysOfEachMonthOnNormalYear() {
-        for (int month = 1; month <= 12; month++) {
-            YearMonth yearMonth = YearMonth.of(2029, month);
-            LocalDate firstDayOfMonth = yearMonth.atDay(1);
+    void testEachDayOnLeapYear() {
+        testDaysOnYear(2020);
+    }
 
-            testDayOfYear(firstDayOfMonth);
+    @Test
+    void testYear2000IsLeapYear() {
+        int doy = DayOfYear.dayOfYear(12, 31, 2000);
+        assertEquals(366, doy, "Year 2000 should be leap year and should have 366 days");
+    }
+
+    @Test
+    void testYear2100IsNotLeapYear() {
+        int doy = DayOfYear.dayOfYear(12, 31, 2100);
+        assertEquals(365, doy, "Year 2100 should not be leap year and should have 365 days");
+    }
+
+    @Test
+    void testYear2400isLeapYear() {
+        int doy = DayOfYear.dayOfYear(12, 31, 2400);
+        assertEquals(366, doy, "Year 2400 should be leap year and should have 366 days");
+    }
+
+    /*
+     * This utility method tests each day of the given year to ensure that the
+     * dayOfYear method returns the correct day of the year for each day of the
+     * year.
+     *
+     * The purpose of this method is to reduce the amount of code duplication in the
+     * test methods regarding different types of years.
+     */
+    private void testDaysOnYear(int year) {
+        LocalDate date = LocalDate.of(year, 1, 1);
+
+        for (int i = 1; date.getYear() == 2019; date = date.plusDays(1), i++) {
+            assertDayOfYear(i, date);
         }
     }
 
-    @Test
-    void testFirstDaysOfEachMonthOnLeapYear() {
-        for (int month = 1; month <= 12; month++) {
-            YearMonth yearMonth = YearMonth.of(2040, month);
-            LocalDate firstDayOfMonth = yearMonth.atDay(1);
+    /*
+     * This utility method asserts that the given date is the given day of the year.
+     * Individual test methods do not need to duplicate calls to the dayOfYear
+     * method and the assertEquals method. Instead, they can just pass the expected
+     * day of the year and the date to this method.
+     */
+    private void assertDayOfYear(int expected, LocalDate date) {
+        int doy = DayOfYear.dayOfYear(date.getMonthValue(), date.getDayOfMonth(), date.getYear());
 
-            testDayOfYear(firstDayOfMonth);
-        }
-    }
-
-    @Test
-    void testLastDaysOfEachMonthOnNormalYear() {
-        for (int month = 1; month <= 12; month++) {
-            YearMonth yearMonth = YearMonth.of(2029, month);
-            LocalDate lastDayOfMonth = yearMonth.atEndOfMonth();
-
-            testDayOfYear(lastDayOfMonth);
-        }
-    }
-
-    @Test
-    void testLastDaysOfEachMonthOnLeapYear() {
-        for (int month = 1; month <= 12; month++) {
-            YearMonth yearMonth = YearMonth.of(2040, month);
-            LocalDate lastDayOfMonth = yearMonth.atEndOfMonth();
-
-            testDayOfYear(lastDayOfMonth);
-        }
-    }
-
-    private void testDayOfYear(LocalDate date) {
-        int expected = date.getDayOfYear();
-        int result = DayOfYear.dayOfYear(date.getMonthValue(), date.getDayOfMonth(), date.getYear());
-
-        assertEquals(expected, result, "Day " + date + " should be " + expected + " but it was " + result);
+        assertEquals(expected, doy, "Day " + date + " should be " + expected + " but it was " + doy);
     }
 }
