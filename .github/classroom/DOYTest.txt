@@ -68,7 +68,9 @@ public class DOYTest {
     private void testDaysOnYear(int year) {
         LocalDate date = LocalDate.of(year, 1, 1);
 
-        for (int i = 1; date.getYear() == 2019; date = date.plusDays(1), i++) {
+        // Loop through each day of the given year and assert that the dayOfYear method
+        // returns the correct day of the year for each day.
+        for (int i = 1; date.getYear() == year; date = date.plusDays(1), i++) {
             assertDayOfYear(i, date);
         }
     }
