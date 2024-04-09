@@ -1,3 +1,4 @@
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
@@ -10,16 +11,16 @@ public class DOYTest {
 
     @Test
     void testFirstDayOfYear() {
-        int result = DayOfYear.dayOfYear(1, 1, 2020);
-
-        assertEquals(1, result, "First day of year should be 1 but it was " + result);
+        assertDayOfYear(1, LocalDate.of(2019, 1, 1));
+        assertDayOfYear(1, LocalDate.of(2020, 1, 1));
+        assertDayOfYear(1, LocalDate.of(2100, 1, 1));
     }
 
     @Test
     void testLastDayOfNormalYear() {
-        assertDayOfYear(365, LocalDate.of(2017, 12, 31));
-        assertDayOfYear(365, LocalDate.of(2018, 12, 31));
-        assertDayOfYear(365, LocalDate.of(2019, 12, 31));
+        assertDayOfYear(365, LocalDate.of(2025, 12, 31));
+        assertDayOfYear(365, LocalDate.of(2026, 12, 31));
+        assertDayOfYear(365, LocalDate.of(2027, 12, 31));
     }
 
     @Test
