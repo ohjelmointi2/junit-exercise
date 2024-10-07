@@ -4,7 +4,7 @@
       "name": "PriceFormatterTest: original code",
       "setup": "",
       "run": "./gradlew test --tests PriceFormatterTest && touch success.txt",
-      "comment": "This test uses a buggy version of PriceFormatter.java. The test should fail, so the return value is reversed using (!).",
+      "comment": "The original code should not have any bugs, so the tests written by the student should pass",
       "input": "",
       "output": "",
       "comparison": "exact",
