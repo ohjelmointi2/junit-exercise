@@ -86,18 +86,17 @@ If you wrote comprehensive test cases for all the formatting rules mentioned ear
 
 ## Exercise 2: DayOfYear *(applying, 2 * 25 %)*
 
-Tämän tehtävärepositorion toisessa tehtävässä sinun tulee toteuttaa JUnit-yksikkötestit [valmiiksi annetulle `DayOfYear`-luokalle](./src/main/java/refactoring/DayOfYear.java). Luokassa on yksi staattinen metodi nimeltään `dayOfYear`. Tämä metodi saa parametreinaan päivämäärän kolmena kokonaislukuna ja sen pitäisi palauttaa annetun päivämäärän järjestysnumeron kyseisenä vuonna (1-366). Vuoden ensimmäinen päivä on numeroltaan 1 ja viimeinen vuodesta riippuen joko 365 tai 366.
+In the second exercise of this repository, you need to implement JUnit unit tests for the [provided `DayOfYear` class](./src/main/java/refactoring/DayOfYear.java). The class has one static method named `dayOfYear`. This method takes a date as three integers and should return the ordinal number of the given date in that year (1-366). The first day of the year is numbered 1, and the last day is either 365 or 366, depending on the year.
 
-Metodin sisällön lukeminen ja ymmärtäminen eivät ole testien kannalta välttämätöntä. Suunnittele testitapaukset sen mukaan, miten metodin **pitäisi** toimia eikä sen mukaan miten se oikeasti toimii.
+Reading and understanding the method's content is not necessary for the tests. Design the test cases based on how the method **should** work, not how it actually works.
 
 > *"Some data sets specify dates using the year and day of year rather than the year, month, and day of month. The day of year (DOY) is the sequential day number starting with day 1 on January 1st."*
 >
 > [Day of the Year (DOY) calendar. National Snow and Ice Data Center](https://nsidc.org/data/user-resources/help-center/day-year-doy-calendar)
 
-Voit tutkia eri päivämääriä vastaavia "day of year"-lukuja esimerkiksi [Day of the Year (DOY) calendar -kalenterista](https://nsidc.org/data/user-resources/help-center/day-year-doy-calendar) (National Snow and Ice Data Center). Huomaa, että maaliskuusta alkaen eri päivien numerot vaihtelevat tavallisina- ja karkausvuosina.
+You can explore the "day of year" numbers corresponding to different dates using the [Day of the Year (DOY) calendar](https://nsidc.org/data/user-resources/help-center/day-year-doy-calendar) (National Snow and Ice Data Center). Note that from March onwards, the numbers for different days vary between common and leap years.
 
-**Annetussa metodissa on bugeja**, jotka tässä tehtävässä tulee löytää omilla JUnit-testeillä.
-
+**The provided method contains bugs**, which you need to find using your own JUnit tests in this task.
 
 ### Osa 2.1: kirjoita `dayOfYear`-metodille JUnit-yksikkötestit
 
