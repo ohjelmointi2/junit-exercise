@@ -158,32 +158,29 @@ In the [original source](https://web.mit.edu/6.005/www/fa16/classes/04-code-revi
 
 If you wish, you can add checks to the method and throw an `IllegalArgumentException` if the numbers provided to the method do not correspond to a real date. However, this is not necessary for the task, and we do not consider invalid inputs as bugs for this method.
 
-### Tehtävän pisteytys *(25 % + 25 %)*
+### Exercise's points *(25 % + 25 %)*
 
-`DayOfYear`-tehtävä arvioidaan automaattisesti kahdessa osassa. Ensimmäisessä osassa suoritamme oman `DayOfYearTest`-testiluokkasi, jonka tulee läpäistä kaikki kirjoittamasi testit.
+The `DayOfYear` exercise is automatically evaluated in two parts. In the first part, we run your own `DayOfYearTest` test class, which must pass all the tests you have written.
 
 ```
 ./gradlew test --tests DayOfYearTest       # unix
 .\gradlew.bat test --tests DayOfYearTest   # windows
 ```
 
-Toisessa osassa suoritamme erillisen testiluokan, jossa varmistetaan, että `dayOfYear`-metodi toimii oikein tekemiesi korjausten jälkeen. Mikäli erillinen testiluokka havaitsee virheitä automaattisessa arvioinnissa, lue tarkasti [Actions-välilehdeltä](../../actions/workflows/classroom.yml) löytyvä raportti testien suorituksesta.
+In the second part, we run a separate test class to ensure that the `dayOfYear` method works correctly after your corrections. If the separate test class detects errors in the automatic evaluation, carefully read the report on the test execution found in the [Actions tab](../../actions/workflows/classroom.yml).
 
+## License and authors
 
+### DayOfYear Example Class (Smelly Example #1)
 
-## Lisenssi ja tekijät
-
-### DayOfYear-esimerkkiluokka (Smelly Example #1)
-
-Tehtävässä hyödynnetty [`DayOfYear`-esimerkkiluokka](./src/main/java/refactoring/DayOfYear.java) on lainattu [MIT:n Software Construction -kurssin oppimateriaaleista](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/). Sen tekijät ja lisenssi ovat:
+The [`DayOfYear` example class](./src/main/java/refactoring/DayOfYear.java) used in the task is borrowed from the [MIT Software Construction course materials](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/). Its authors and license are:
 
 > *Collaboratively authored with contributions from: Saman Amarasinghe, Adam Chlipala, Srini Devadas, Michael Ernst, Max Goldman, John Guttag, Daniel Jackson, Rob Miller, Martin Rinard, and Armando Solar-Lezama.*
 >
 > *Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fi).*
 
+### This execise
 
-### Tämä tehtävä
+This exercise is made by Teemu Havulinna and translated to English by Kalle Ilves and it is licensed under a [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA -lisenssillä](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-
-Tehtävänannon, lähdekoodien ja testien toteutuksessa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub copilot -tekoälyavustinta.
+ChatGPT 3.5 language model and GitHub copilot AI assistant has been used to implement the exercise.
