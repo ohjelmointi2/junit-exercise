@@ -131,12 +131,11 @@ When fixing bugs, you might find the Java [`Year` class and its `isLeap` method]
 >
 > Wikipedia. [Code refactoring](https://en.wikipedia.org/wiki/Code_refactoring). Cited on 20.11.2024. [CC BY–SA 3.0](https://fi.wikipedia.org/wiki/Wikipedia:Creative_Commons_Attribution-Share_Alike_3.0_Unported_-lisenssiehdot)
 
-⛔ *Javan standardikirjastossa on olemassa useita valmiita toimivia toteutuksia päivän järjestysnumeron laskemiselle. Oikeassa ohjelmistoprojektissa sinun tulisi luonnollisesti käyttää valmista ratkaisua, eikä yrittää keksiä pyörää uudestaan. Tämän harjoituksen tavoitteena on kuitenkin opetella testaamaan ja refaktoroimaan koodia, joten suosittelemme muodostamaan oman ratkaisun annettua koodia muokkaamalla.*
-
+⛔ *The Java standard library contains several ready-made implementations for calculating the ordinal number of a day. In a real software project, you should naturally use an existing solution rather than trying to reinvent the wheel. However, the goal of this exercise is to learn how to test and refactor code, so we recommend creating your own solution by modifying the given code.*
 
 **"Code smells"**
 
-Tutustu seuraaviin "koodin hajuihin" esimerkkikoodissa ja parantele koodia parhaasi mukaan:
+Familiarize yourself with the following "code smells" in the example code and improve the code as best as you can:
 
 - [Don't Repeat Yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 - [Comments Where Needed](https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/)
@@ -144,16 +143,14 @@ Tutustu seuraaviin "koodin hajuihin" esimerkkikoodissa ja parantele koodia parha
 - [Avoid Magic Numbers](https://en.wikipedia.org/wiki/Magic_number_(programming))
 - [One Purpose For Each Variable](https://en.wikipedia.org/wiki/Single-responsibility_principle)
 
-Edellä mainittu lista koodin "hajuista" on käyty läpi tämän saman esimerkkikoodin avulla osoitteessa [https://web.mit.edu/6.005/www/fa16/classes/04-code-review/](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/). Voit käyttää myös muita lähteitä.
+The above list of code smells has been reviewed using this same example code at <https://web.mit.edu/6.005/www/fa16/classes/04-code-review/>. You can also use other sources.
 
+**Links**
 
-**Linkit**
-
-* [Year-luokka](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/Year.html)
-* [Month-luokka](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/Month.html)
-* [YearMonth-luokka](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/YearMonth.html)
-* [Tehtävän alkuperäinen lähde](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/)
-
+* [Year class](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/Year.html)
+* [Month class](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/Month.html)
+* [YearMonth class](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/YearMonth.html)
+* [The original source for the exercise](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/)
 
 ### Virheelliset parametrit &mdash; bugi vai ominaisuus? *(pohdittavaa)*
 
