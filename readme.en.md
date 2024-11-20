@@ -98,7 +98,7 @@ You can explore the "day of year" numbers corresponding to different dates using
 
 **The provided method contains bugs**, which you need to find using your own JUnit tests in this task.
 
-### Execise 2.1: write JUnit unit tests for the `dayOfYear` method
+### Part 2.1: write JUnit unit tests for the `dayOfYear` method
 
 Add a new test class `DayOfYearTest` to the project, where you will use the JUnit testing library to test the functionality of the `dayOfYear` method with various test cases. Test classes should be added to the [src/test/java/](./src/test/java/) directory so that JUnit can find them and utilize the JUnit library. Test classes are typically located in the same package as the classes being tested, so in this case, create a package named `refactoring` in the `src/test/java` directory for this new test. Also, add the line `package refactoring;` at the beginning of your test class.
 
@@ -115,7 +115,7 @@ You can run your test class as usual, either with your code editor or with Gradl
 
 💡 *Remember to add the new `src/test/refactoring` directory and `DayOfYearTest.java` file to version control with the `git add` command. If needed, check `git status` for instructions on how to do this.*
 
-### Osa 2.2: `dayOfYear`-metodin korjaus ja refaktorointi
+### Part 2.2: fixing and refactoring the `dayOfYear` method
 
 Tähän asti olet ohjelmointiopinnoissasi kenties keskittynyt lähinnä saamaan ohjelmasi toimimaan tehtävänannon mukaisesti kiinnittämättä suurempaa huomiota sen ymmärrettävyyteen tai jatkokehitettävyyteen. Voimme olettaa myös annetun `dayOfYear`-metodin syntyneen näin. Ammatillisessa ohjelmistokehityksessä on harvinaista, että samaa koodia työstettäisiin vain kerran tai vain yhden kehittäjän toimesta. Päinvastoin, koodia kirjoitetaan tiimeissä, joissa kehittäjät vaihtuvat ja olemassa oleviin ominaisuuksiin tehdään jatkuvasti muutoksia ja korjauksia.
 
