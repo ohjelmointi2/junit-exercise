@@ -152,12 +152,11 @@ The above list of code smells has been reviewed using this same example code at 
 * [YearMonth class](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/time/YearMonth.html)
 * [The original source for the exercise](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/)
 
-### Virheelliset parametrit &mdash; bugi vai ominaisuus? *(pohdittavaa)*
+### Invalid parameters &mdash; a bug or a feature? *(something to consider)*
 
-`dayOfYear`-esimerkkikoodin [alkuperäisessä lähteessä](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/#fail_fast) tuodaan esiin fail fast -ajattelutapa, jonka mukaisesti ongelmat on sitä helpompi korjata mitä aikaisemmin ne havaitaan. Tämän metodin tapauksessa metodi palauttaa kokonaislukuja riippumatta siitä, ovatko kuukausien ja päivien numerot annettu oikeassa järjestyksessä tai ovatko ne sallituilta väleiltä.
+In the [original source](https://web.mit.edu/6.005/www/fa16/classes/04-code-review/#fail_fast) of the `dayOfYear` example code, the fail fast approach is highlighted, which suggests that problems are easier to fix the earlier they are detected. In the case of this method, it returns integers regardless of whether the month and day numbers are given in the correct order or within valid ranges.
 
-Voit halutessasi lisätä metodiin tarkastuksia ja heittää esimerkiksi `IllegalArgumentException`-poikkeuksen, mikäli metodille annetut numerot eivät vastaa todellista päivämäärää. Tämä ei kuitenkaan ole tehtävän kannalta välttämätöntä, emmekä laske virheellisiä syötteitä tämän metodin bugeiksi.
-
+If you wish, you can add checks to the method and throw an `IllegalArgumentException` if the numbers provided to the method do not correspond to a real date. However, this is not necessary for the task, and we do not consider invalid inputs as bugs for this method.
 
 ### Tehtävän pisteytys *(25 % + 25 %)*
 
