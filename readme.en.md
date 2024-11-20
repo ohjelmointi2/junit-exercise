@@ -98,23 +98,22 @@ You can explore the "day of year" numbers corresponding to different dates using
 
 **The provided method contains bugs**, which you need to find using your own JUnit tests in this task.
 
-### Osa 2.1: kirjoita `dayOfYear`-metodille JUnit-yksikkötestit
+### Execise 2.1: write JUnit unit tests for the `dayOfYear` method
 
-Lisää projektiin uusi testiluokka `DayOfYearTest`, jossa hyödynnät  JUnit-testikirjastoa testataksesi `dayOfYear`-metodin toimivuutta erilaisilla testitapauksilla. Testiluokat tulee lisätä [src/test/java/](./src/test/java/)-hakemistoon, jotta JUnit löytää ne ja jotta niissä voidaan hyödyntää JUnit-kirjastoa. Testiluokat sijaitsevat tyypillisesti samannimisessä paketissa kuin testattavat luokat, eli tässä tapauksessa luo `src/test/java`-hakemistoon tätä uutta testiä varten paketti nimeltä `refactoring`. Lisää testiluokkasi alkuun myös rivi: `package refactoring;`.
+Add a new test class `DayOfYearTest` to the project, where you will use the JUnit testing library to test the functionality of the `dayOfYear` method with various test cases. Test classes should be added to the [src/test/java/](./src/test/java/) directory so that JUnit can find them and utilize the JUnit library. Test classes are typically located in the same package as the classes being tested, so in this case, create a package named `refactoring` in the `src/test/java` directory for this new test. Also, add the line `package refactoring;` at the beginning of your test class.
 
-Kirjoita testiluokkaasi riittävät testitapaukset, jotta voit todentaa metodin toiminnan ja siinä mahdollisesti esiintyvät virheet vuoden eri ajankohtina huomioiden karkausvuosilogiikan. Kirjoita eri testitapaukset kukin omaan `@Test`-metodiin.
+Write sufficient test cases in your test class to verify the method's functionality and any potential errors at different times of the year, considering the leap year logic. Write each test case in its own `@Test` method.
 
-Voit suorittaa testiluokkasi tuttuun tapaan joko koodieditorillasi tai Gradlen avulla. Automaattisessa arvioinnissa testisi suoritetaan komennolla:
+You can run your test class as usual, either with your code editor or with Gradle. In the automatic assessment, your tests will be run with the command:
 
 ```
 ./gradlew test --tests DayOfYearTest       # unix
 .\gradlew.bat test --tests DayOfYearTest   # windows
 ```
 
-💡 *Tässä vaiheessa testisi toivottavasti löytävät metodissa valmiiksi olevia bugeja, joten kaikki testit eivät vielä mene läpi.*
+💡 *At this stage, your tests will hopefully find the pre-existing bugs in the method, so not all tests will pass yet.*
 
-💡 *Muista lisätä uusi `src/test/refactoring`-hakemisto ja `DayOfYearTest.java`-tiedosto versionhallintaan `git add`-komennolla. Katso tarvittaessa `git status`, joka kertoo miten tämä tehdään.*
-
+💡 *Remember to add the new `src/test/refactoring` directory and `DayOfYearTest.java` file to version control with the `git add` command. If needed, check `git status` for instructions on how to do this.*
 
 ### Osa 2.2: `dayOfYear`-metodin korjaus ja refaktorointi
 
