@@ -72,22 +72,19 @@ You can run your tests using either the testing tool in your code editor [VS Cod
 
 ⛔ *You must not make any changes to the `PriceFormatter` class.*
 
-### Tehtävän pisteytys *(5 * 10 %)*
+### Exercise's points *(5 * 10 %)*
 
-Se, että testit "menevät läpi", ei välttämättä tarkoita, että testit olisivat kattavat tai että testattavassa koodissa ei olisi bugeja. Jotta varmistamme, että testisi ovat kattavat, ajetaan testisi myös **viittä eri tavoin bugista versioita vasten** 😈. Kirjoittamiesi testien tulee löytää näissä versioissa piilevät bugit.
+The fact that tests "pass" does not necessarily mean that the tests are comprehensive or that the code being tested is bug-free. To ensure that your tests are comprehensive, your tests will also be run against **five different buggy versions** 😈. Your tests must find the bugs hidden in these versions.
 
-Jos kirjoitit kattavat testitapaukset kaikille aiemmin esitetyille muotoilusäännöille, tämä osa ei edellytä muutoksia testeihisi 😎. Mikäli testisi eivät löydä kaikkia bugeja GitHub classroomin automaattisessa tarkastuksessa, jatka [`PriceFormatterTest`-luokan](./src/test/java/price/formatter/PriceFormatterTest.java) kehittämistä ja varmista, että testisi tarkastavat kaikki ylempänä esitetyt muotoilusäännöt erilaisten syötteiden avulla.
+If you wrote comprehensive test cases for all the formatting rules mentioned earlier, this part does not require changes to your tests 😎. If your tests do not find all the bugs in the GitHub classroom's automatic check, continue developing the [`PriceFormatterTest`](./src/test/java/price/formatter/PriceFormatterTest.java) class and ensure that your tests check all the formatting rules mentioned above with different inputs.
 
+💡 *In this part, your tests will be run five times against five different buggy versions of the `formatPrice` method. You will score points for each run if the buggy version of the `formatPrice` method **causes an error** in at least one of your test methods. If the tests pass, it means the bug was not found, and you will not score points.*
 
-💡 *Tässä osassa testisi ajetaan viiteen kertaan viittä eri tavoin bugista `formatPrice`-metodia vasten. Saat kustakin suorituksesta pisteet, mikäli buginen versio `formatPrice`-metodista **aiheuttaa virheen** vähintään yhdessä testimetodissasi. Jos testit menevät läpi, tarkoittaa se, että bugi jäi löytymättä. Tällöin myös pisteet jäävät saamatta.*
+💡 *Running these applied tests requires that the original working version of the `formatPrice` method first passes your own tests.*
 
-💡 *Näiden soveltavien testien suorittaminen edellyttää, että alkuperäinen toimiva versio `formatPrice`-metodista läpäisee ensin omat testisi.*
+🚀 *The task assessment applies a method called mutation testing: "Mutation testing is used to design new software tests and evaluate the quality of existing software tests. Mutation testing involves modifying a program in small ways." [(Wikipedia)](https://en.wikipedia.org/wiki/Mutation_testing)*
 
-🚀 *Tehtävän tarkastuksessa sovelletaan menetelmää nimeltä mutaatiotestaus: "Mutation testing is used to design new software tests and evaluate the quality of existing software tests. Mutation testing involves modifying a program in small ways." [(Wikipedia)](https://en.wikipedia.org/wiki/Mutation_testing)*
-
-
-
-## Tehtävä 2: DayOfYear *(soveltava, 2 * 25 %)*
+## Exercise 2: DayOfYear *(applying, 2 * 25 %)*
 
 Tämän tehtävärepositorion toisessa tehtävässä sinun tulee toteuttaa JUnit-yksikkötestit [valmiiksi annetulle `DayOfYear`-luokalle](./src/main/java/refactoring/DayOfYear.java). Luokassa on yksi staattinen metodi nimeltään `dayOfYear`. Tämä metodi saa parametreinaan päivämäärän kolmena kokonaislukuna ja sen pitäisi palauttaa annetun päivämäärän järjestysnumeron kyseisenä vuonna (1-366). Vuoden ensimmäinen päivä on numeroltaan 1 ja viimeinen vuodesta riippuen joko 365 tai 366.
 
