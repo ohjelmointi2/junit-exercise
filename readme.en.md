@@ -28,25 +28,12 @@ By clicking on the latest *"GitHub Classroom Workflow"* execution from the link 
 
 ## Exercise 1: PriceFormatter
 
-Tässä tehtävässä sinun tulee kirjoittaa yksikkötestejä valmiille `PriceFormatter`-luokalle ja siellä olevalle `formatPrice`-metodille. Metodi saa parametrinaan liukuluvun ja se palauttaa sen merkkijonoksi muotoiltuna tiettyjen sääntöjen mukaisesti. Metodin kutsuminen onnistuu esim. seuraavasti:
-
 In this exercise, you need to write unit tests for the provided `PriceFormatter` class and its `formatPrice` method. The method takes a floating-point number as a parameter and returns it formatted as a string according to specific rules. You can call the method as follows:
 
 ```java
 PriceFormatter formatter = new PriceFormatter();
 String price = formatter.formatPrice(3.141592653589793); // Returns "3,14 €"
 ```
-
-Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,79 €"`. Muotoilun suhteen on seuraavat tarkentavat säännöt:
-
-1. Tuhaterottimena on välilyönti.
-1. Desimaalierottimena on pilkku.
-1. Desimaaliosa on kahden numeron pituinen, seuraavin tarkennuksin:
-    1. Desimaaliosa pyöristetään lähimpään sadasosaan (eli senttiin). [Lisävinkki](./rounding.md).
-    1. Jos desimaaliosa on pyöristyksen jälkeen nolla, jätetään desimaaliosa kokonaan pois.
-1. Hinnan lopussa on Euro-symboli `€`.
-
-**Huomaa, että sinun ei tarvitse itse toteuttaa yllä esitettyä metodia tai siihen kuuluvia ehtoja.** Metodin toteuttamisen sijasta harjoittelemme valmiin metodin *testaamista*.
 
 In the basic case, the method should format the given floating-point number as `"123 456,79 €"`. The formatting rules are as follows:
 
@@ -59,32 +46,31 @@ In the basic case, the method should format the given floating-point number as `
 
 **Note that you do not need to implement the method or its conditions yourself.** Instead of implementing the method, we will practice *testing* the provided method.
 
-### PriceFormatterTest *(perusteet)*
+### PriceFormatterTest *(basics)*
 
-Toteuta tehtäväpohjan [PriceFormatterTest](./src/test/java/price/formatter/PriceFormatterTest.java)-luokkaan omat yksikkötestit, jotka varmistavat eri syötteiden avulla, että valmis `formatPrice`-metodi toimii edellä kuvatulla tavalla. Suosittelemme, että kirjoitat jokaista sääntöä kohden oman erillisen testimetodin.
+Implement your own unit tests in the [PriceFormatterTest](./src/test/java/price/formatter/PriceFormatterTest.java) class of the task template to ensure that the provided `formatPrice` method works as described above with different inputs. We recommend writing a separate test method for each rule.
 
-Kutsu testimetodeissasi `formatPrice`-metodia erilaisilla parametreilla ja varmista, että metodin palauttamat arvot ovat esitettyjen sääntöjen mukaisia:
+In your test methods, call the `formatPrice` method with various parameters and ensure that the values returned by the method comply with the specified rules:
 
 ```java
 PriceFormatter formatter = new PriceFormatter();
-String result = formatter.formatPrice(Math.PI); // pitäisi olla 3.14 €
+String result = formatter.formatPrice(Math.PI); // Should be 3.14 €
 ```
 
-Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
+You can run your tests using either the testing tool in your code editor [VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or the [Gradle automation tool]((https://docs.gradle.org/current/userguide/java_testing.html):
 
 ```
 ./gradlew test --tests PriceFormatterTest       # unix
 .\gradlew.bat test --tests PriceFormatterTest   # windows
 ```
 
-✅ Huomaa, että omien testiesi tulisi tässä vaiheessa mennä läpi, koska testattavassa metodissa ei *pitäisi* olla loogisia virheitä.
+✅ Note that your own tests should pass at this stage because the method being tested should not have logical errors.
 
-💡 *Metodin testaamiseksi sinun ei tarvitse perehtyä sen lähdekoodiin. Tärkeämpää on, että tiedossasi on yllä esitetyt metodin toimintaa koskevat **vaatimukset**.*
+💡 *To test the method, you do not need to delve into its source code. What is more important is that you are aware of the **requirements** for the method's functionality as described above.*
 
-💡 *Jos käytät testeissäsi lukuja, joka asettuvat tasan sadasosien "puoliväliin", saatat törmätä liukulukujen rajallista tarkkuutta koskeviin ongelmiin. Ongelma ei johdu Javasta eikä omasta tai testattavasta koodista, vaan siitä, miten tietokoneet käsittelevät desimaaliosia. Tarkempi selitys aiheesta löytyy tämän repositorion tiedostosta [rounding.md](./rounding.md) tai artikkelista ["What Every Computer Scientist Should Know About Floating-Point Arithmetic" (oracle.com)](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).*
+💡 *If you use numbers in your tests that fall exactly halfway between hundredths, you might encounter issues related to the limited precision of floating-point numbers. This problem is not due to Java or your own or the tested code, but rather how computers handle decimal fractions. A more detailed explanation can be found in the file [rounding.md](./rounding.md) in this repository or in the article ["What Every Computer Scientist Should Know About Floating-Point Arithmetic" (oracle.com)](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html).*
 
-⛔ *Et saa tehdän lainkaan muutoksia `PriceFormatter`-luokkaan.*
-
+⛔ *You must not make any changes to the `PriceFormatter` class.*
 
 ### Tehtävän pisteytys *(5 * 10 %)*
 
