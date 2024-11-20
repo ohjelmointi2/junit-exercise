@@ -26,13 +26,15 @@ By clicking on the latest *"GitHub Classroom Workflow"* execution from the link 
 
 💡 *You can submit your solution for evaluation as many times as needed until the task deadline. However, ensure that your latest submission yields the best scores, as only the most recent scores will be retained.*
 
-## Tehtävä 1: PriceFormatter
+## Exercise 1: PriceFormatter
 
 Tässä tehtävässä sinun tulee kirjoittaa yksikkötestejä valmiille `PriceFormatter`-luokalle ja siellä olevalle `formatPrice`-metodille. Metodi saa parametrinaan liukuluvun ja se palauttaa sen merkkijonoksi muotoiltuna tiettyjen sääntöjen mukaisesti. Metodin kutsuminen onnistuu esim. seuraavasti:
 
+In this exercise, you need to write unit tests for the provided `PriceFormatter` class and its `formatPrice` method. The method takes a floating-point number as a parameter and returns it formatted as a string according to specific rules. You can call the method as follows:
+
 ```java
 PriceFormatter formatter = new PriceFormatter();
-String price = formatter.formatPrice(3.141592653589793); // Palauttaa "3,14 €"
+String price = formatter.formatPrice(3.141592653589793); // Returns "3,14 €"
 ```
 
 Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,79 €"`. Muotoilun suhteen on seuraavat tarkentavat säännöt:
@@ -45,6 +47,17 @@ Perustapauksessa metodin pitäisi muotoilla annettu liukuluku muotoon `"123 456,
 1. Hinnan lopussa on Euro-symboli `€`.
 
 **Huomaa, että sinun ei tarvitse itse toteuttaa yllä esitettyä metodia tai siihen kuuluvia ehtoja.** Metodin toteuttamisen sijasta harjoittelemme valmiin metodin *testaamista*.
+
+In the basic case, the method should format the given floating-point number as `"123 456,79 €"`. The formatting rules are as follows:
+
+1. A space is used as the thousands separator.
+2. A comma is used as the decimal separator.
+3. The decimal part is two digits long, with the following clarifications:
+    1. The decimal part is rounded to the nearest hundredth (i.e., cent). Additional tip.
+    2. If the decimal part is zero after rounding, it is omitted entirely.
+4. The Euro symbol `€` is placed at the end of the price.
+
+**Note that you do not need to implement the method or its conditions yourself.** Instead of implementing the method, we will practice *testing* the provided method.
 
 ### PriceFormatterTest *(perusteet)*
 
