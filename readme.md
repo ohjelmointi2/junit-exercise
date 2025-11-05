@@ -60,7 +60,7 @@ Kutsu testimetodeissasi `formatPrice`-metodia erilaisilla parametreilla ja varmi
 
 ```java
 PriceFormatter formatter = new PriceFormatter();
-String result = formatter.formatPrice(Math.PI); // pitäisi olla 3.14 €
+String result = formatter.formatPrice(Math.PI); // pitäisi olla 3,14 €
 ```
 
 Voit suorittaa testisi joko koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):

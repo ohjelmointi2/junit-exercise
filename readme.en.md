@@ -54,7 +54,7 @@ In your test methods, call the `formatPrice` method with various parameters and 
 
 ```java
 PriceFormatter formatter = new PriceFormatter();
-String result = formatter.formatPrice(Math.PI); // Should be 3.14 €
+String result = formatter.formatPrice(Math.PI); // Should be 3,14 €
 ```
 
 You can run your tests using either the testing tool in your code editor [VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or the [Gradle automation tool]((https://docs.gradle.org/current/userguide/java_testing.html):
