@@ -6,21 +6,13 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Write your tests for the PriceFormatter here. See the specification of the
- * PriceFormatter and formatPrice method in the PriceFormatter class.
+ * PriceFormatter and formatPrice method in the PriceFormatter class and the
+ * readme file.
  */
 public class PriceFormatterTest {
 
     @Test
     void removeThisTestWhenImplementingYourOwnTests() {
-        /*
-         * The formatPrice method takes a double as a parameter and returns a String:
-         *
-         * PriceFormatter formatter = new PriceFormatter();
-         * String formatted = formatter.formatPrice(Math.PI); // 3.14 €
-         *
-         * Call the method with different values in your tests and check that the
-         * returned Strings match the specification.
-         */
         PriceFormatter formatter = new PriceFormatter();
 
         fail("Remove this test and implement your own tests for the PriceFormatter class.");
