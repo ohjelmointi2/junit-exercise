@@ -17,7 +17,12 @@ public class PriceFormatter {
      * @return the formatted price as a string
      */
     public String formatPrice(double price) {
-        // https://stackoverflow.com/a/5054217
+        // This method is expected to work correctly and you SHOULD NOT MODIFY IT.
+        // Instead, write unit tests that verify the correctness of this method.
+        // When checking your submission, we will inject bugs into this method and
+        // see if your tests can detect them.
+
+        // See discussion about this solution at https://stackoverflow.com/a/5054217
         NumberFormat formatter = NumberFormat.getNumberInstance(Locale.GERMAN);
         formatter.setMinimumFractionDigits(2);
         formatter.setMaximumFractionDigits(2);
